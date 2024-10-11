@@ -3,6 +3,7 @@ import { Form, Formik } from "formik";
 import InputField from "../InputField";
 import SubmitButton from "../SubmitButton";
 import Alert from "../Alert";
+import SelectField from "../SelectField";
 import useRegisterForm from "./useRegisterForm";
 import RegisterFormSchema from "./RegisterFormSchema";
 import Title from "../Title";
@@ -18,7 +19,7 @@ const RegisterForm: React.FC = () => {
           Formulário de cadastro
         </h2>
 
-        <Alert mensagem={message} />
+        <Alert message={message} />
         <Formik
           initialValues={initialValues}
           validationSchema={RegisterFormSchema}
@@ -28,7 +29,9 @@ const RegisterForm: React.FC = () => {
             <InputField label="Nome" name="nome" type="text" />
             <InputField label="E-mail" name="email" type="email" />
             <InputField label="Idade" name="idade" type="number" />
-            <InputField label="Ocupação" name="ocupacao" type="text" />
+            <SelectField label="Ocupação" name="ocupacao" />
+            <InputField label="Linkedin" name="linkedin" type="text" />
+            <InputField label="Github" name="github" type="text" />
 
             <SubmitButton label="Cadastrar" />
           </Form>

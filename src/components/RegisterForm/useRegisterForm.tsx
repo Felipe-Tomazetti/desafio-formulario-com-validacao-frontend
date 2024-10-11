@@ -7,6 +7,8 @@ type RegisterFormValues = {
   email: string;
   idade: string;
   ocupacao: string;
+  linkedin?: string;
+  github?: string;
 };
 
 const useRegisterForm = () => {
@@ -17,6 +19,8 @@ const useRegisterForm = () => {
     email: "",
     idade: "",
     ocupacao: "",
+    linkedin: "",
+    github: "",
   };
 
   const { resetForm } = useFormik({
