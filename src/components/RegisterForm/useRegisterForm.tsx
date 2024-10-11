@@ -1,5 +1,3 @@
-import { useFormik } from "formik";
-import RegisterFormSchema from "./RegisterFormSchema";
 import { useState } from "react";
 
 type RegisterFormValues = {
@@ -23,13 +21,10 @@ const useRegisterForm = () => {
     github: "",
   };
 
-  const { resetForm } = useFormik({
-    initialValues,
-    validationSchema: RegisterFormSchema,
-    onSubmit,
-  });
-
-  async function onSubmit(values: RegisterFormValues) {
+  async function onSubmit(
+    values: RegisterFormValues,
+    { resetForm }: { resetForm: () => void }
+  ) {
     try {
       const storage = localStorage;
 
@@ -39,6 +34,9 @@ const useRegisterForm = () => {
 
       storage.setItem("membros", JSON.stringify(membros));
       setMessage("Cadastro realizado com sucesso!");
+      setTimeout(() => {
+        setMessage(null);
+      }, 2000);
       resetForm();
     } catch (erro) {
       setMessage("Falha ao cadastrar. Verifique os dados informados.");
