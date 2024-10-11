@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import { Form, useFormik, Formik } from "formik";
+import React from "react";
+import { Form, Formik } from "formik";
 import InputField from "../InputField";
 import SubmitButton from "../SubmitButton";
 import Alert from "../Alert";
 import useRegisterForm from "./useRegisterForm";
 import RegisterFormSchema from "./RegisterFormSchema";
+import Title from "../Title";
 
 const RegisterForm: React.FC = () => {
   const { initialValues, message, onSubmit } = useRegisterForm();
 
   return (
-    <div className="flex justify-center items-center bg-gradient-to-br from-cyan-600 to-black border-blue-700 min-h-screen ">
-      <div className="form-container w-full max-w-md p-8 bg-white rounded-2xl shadow-md">
-        <h2 className="text-2xl font-bold mb-6 text-center text-black">
-          Formulário de cadastro para o ProjetoFrontEnd Fusion
+    <div className="flex flex-col justify-center items-center bg-gradient-to-br from-cyan-600 from-0% to-black to-50% border-blue-700 min-h-screen ">
+      <Title />
+      <div className="form-container w-full max-w-md p-8 bg-gray-800 rounded-2xl shadow-lg">
+        <h2 className="text-2xl font-bold mb-6 text-center text-teal-300">
+          Formulário de cadastro
         </h2>
 
         <Alert mensagem={message} />

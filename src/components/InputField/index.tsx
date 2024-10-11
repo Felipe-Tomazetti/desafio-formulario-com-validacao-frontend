@@ -20,7 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
     <div className="mb-4">
       <label
         htmlFor={name}
-        className="block text-md font-semibold text-gray-700"
+        className="flex self-start text-md font-semibold text-white"
       >
         {label}
       </label>
@@ -29,7 +29,7 @@ const InputField: React.FC<InputFieldProps> = ({
         id={name}
         type={type}
         placeholder={placeholder}
-        className={`mt-1 block w-full p-2 border text-white bg-gray-600  ${
+        className={`mt-1 block w-full p-2 border text-black bg-white  ${
           meta.touched && meta.error ? "border-red-500" : "border-gray-300"
         } rounded`}
       />
